@@ -8,7 +8,14 @@
 		<Title>ReadyDOS.Shared</Title>
 		<Description>A lightweight, open-source workflow contract layer built in C# on top of ML.NET principles. This package provides interfaces and data records only — no internal training recipes or infrastructure — making it safe to share while still giving developers powerful building blocks to orchestrate their own machine learning pipelines.</Description>
 		<Copyright>MIT</Copyright>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Include="..\S3mphony\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.1" />
 		<PackageReference Include="Microsoft.ML" Version="5.0.0" />
