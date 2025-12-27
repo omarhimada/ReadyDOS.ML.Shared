@@ -5,16 +5,25 @@
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>ReadyDOS.Shared</Title>
+		<Title>ReadyDOS.ML.Shared</Title>
 		<Description>A lightweight, open-source workflow contract layer built in C# on top of ML.NET principles. This package provides interfaces and data records only — no internal training recipes or infrastructure — making it safe to share while still giving developers powerful building blocks to orchestrate their own machine learning pipelines.</Description>
 		<Copyright>MIT</Copyright>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/omarhimada/Shared</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>ml,ai,ml ops,dag,directed acyclic graph,workflows,pipeline,data,machine learning</PackageTags>
+		<Company>$(Authors),omarhimada,readydos</Company>
+		<PackageId>ReadyDOS.ML.$(AssemblyName)</PackageId>
+		<Authors>$(AssemblyName),omarhimada,readydos</Authors>
+		<Product>ReadyDOS.ML.$(AssemblyName)</Product>
+		<PackageProjectUrl>https://adosiml.com/</PackageProjectUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>False</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 	<ItemGroup>
-	  <None Include="..\S3mphony\README.md">
+	  <None Include="..\ReadyDOS\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
