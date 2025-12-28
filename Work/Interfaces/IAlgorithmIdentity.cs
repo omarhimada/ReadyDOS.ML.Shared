@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Shared.Work.Interfaces {
+﻿namespace Shared.Work.Interfaces {
     /// <summary>
     /// Provides a set of algorithm identifiers and their associated display names supported by the system.
     /// </summary>

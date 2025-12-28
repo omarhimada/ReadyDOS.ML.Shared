@@ -5,7 +5,34 @@ This package provides interfaces and data records only — no internal training 
 ## Getting Started
 I personally use `IWorkflow` in my own projects and real production-style prototypes, and I plan to adapt it soon for high-quality segmentation visualizations.
 
+---
 
+## Recent OCR & PDF AI Workflow implementatnions with a lot of potentials for busiinesses.
+
+## 🚀 Features Overview
+
+### ✅ Task Lists 12/27
+
+- [x] Reads unstructured or scanned PDFs (contracts, filings, policies, claims, regulations)
+- [x] Extracts text via embedded content or OCR, normalizes it, featurizes it, clusters it
+- [x] Produces quantifiable training manifests and preview-scored results
+- [x] Supports automated retraining, quality comparison, and best-model promotion
+- [x] Search & Replace
+- [x] Could runs on scalable worker services (CPU or GPU), suitable for ML-Ops or regulated intelligence pipelines
+- [x] Cloud storage integration
+
+
+### 📝 Text Formatting
+- **AI-powered legal documentation processing** at scale
+- Automates extraction and normalization of dense legal text from PDFs, contracts, filings, and statutes
+- Enables semantic clustering of documents for compliance review, e-discovery, risk triage, and regulatory audit readiness
+- Converts unstructured legal language into high-quality ML feature vectors for downstream analytics or model retraining
+- Reduces manual review costs, accelerates case preparation, and improves accuracy by eliminating human transcription error
+- Supports conditional dependency pathways (embedded text vs OCR) to maximize recall even on scanned or poor-quality legal sources
+- Generates preview-scored cluster assignments for rapid expert validation (e.g., grouping similar clauses or precedent families)
+- Best for: Law firms, compliance teams, e-discovery vendors, policy analysts, and regulated enterprises
+
+- - 12/25 Pre-existing 
 * End-to-end ML workflow orchestration (data readiness → training → evaluation → persistence)
 * Structured metadata for dataset lineage and splits (DataObjectInfo, DataSplitInfo)
 * Consistent UTC timestamps for distributed and serverless systems

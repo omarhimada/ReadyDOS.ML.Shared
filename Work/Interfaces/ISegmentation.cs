@@ -1,12 +1,4 @@
 ﻿using Microsoft.ML;
-using Microsoft.ML.Data;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Shared.Work.Interfaces {
     public interface ISegmentation {
