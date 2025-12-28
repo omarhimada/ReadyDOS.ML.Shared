@@ -7,14 +7,9 @@ This package provides interfaces and data records only — no internal training 
 ## Getting Started
 I personally use `IWorkflow` in my own projects and real production-style prototypes, and I plan to adapt it soon for high-quality segmentation visualizations.
 
----
-
-## Recent OCR & PDF AI Workflow implementatnions with a lot of potential business aoplications.
-
+------------------------
+## + OCR & PDF AI Workflow implementatnions 
 ## 🚀 Features Overview
-
-### ✅ Task Lists 12/27
-
 - [x] Reads unstructured or scanned PDFs (contracts, filings, policies, claims, regulations)
 - [x] Extracts text via embedded content or OCR, normalizes it, featurizes it, clusters it
 - [x] Produces quantifiable training manifests and preview-scored results
@@ -34,13 +29,13 @@ I personally use `IWorkflow` in my own projects and real production-style protot
 - Generates preview-scored cluster assignments for rapid expert validation (e.g., grouping similar clauses or precedent families)
 - Best for: Law firms, compliance teams, e-discovery vendors, policy analysts, and regulated enterprises
 
-- - 12/25 Pre-existing 
+------------------------------------------------------
+* 12/25 Update
 * End-to-end ML workflow orchestration (data readiness → training → evaluation → persistence)
 * Structured metadata for dataset lineage and splits (DataObjectInfo, DataSplitInfo)
 * Consistent UTC timestamps for distributed and serverless systems
 * Algorithm identity mapping for business-friendly reporting
 * Clean log transport that integrates with any ILogger via IProgress
-
 
 ## What the Shared Library Provides
 *  🧠 Compose end-to-end ML workflows
