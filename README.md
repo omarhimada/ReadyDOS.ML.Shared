@@ -9,7 +9,7 @@ I personally use `IWorkflow` in my own projects and real production-style protot
 
 ---
 
-## Recent OCR & PDF AI Workflow implementatnions with a lot of potentials for busiinesses.
+## Recent OCR & PDF AI Workflow implementatnions with a lot of potential business aoplications.
 
 ## 🚀 Features Overview
 
