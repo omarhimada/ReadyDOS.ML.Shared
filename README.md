@@ -2,6 +2,8 @@
 A lightweight, open-source workflow contract layer built in C# on top of ML.NET principles.
 This package provides interfaces and data records only — no internal training recipes or infrastructure — making it safe to share while still giving developers powerful building blocks to orchestrate their own machine learning pipelines.
 
+![NuGet Version](https://img.shields.io/nuget/v/ReadyDOS.ML.Shared?style=flat)
+
 ## Getting Started
 I personally use `IWorkflow` in my own projects and real production-style prototypes, and I plan to adapt it soon for high-quality segmentation visualizations.
 
