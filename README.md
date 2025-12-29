@@ -1,59 +1,57 @@
-﻿# DOS — Workflow Abstractions
-A lightweight, open-source workflow contract layer built in C# on top of ML.NET principles.
-This package provides interfaces and data records only — no internal training recipes or infrastructure — making it safe to share while still giving developers powerful building blocks to orchestrate their own machine learning pipelines.
+# ReadyDOS — ML Workflows & Abstractions
+AI/ML Workflow interfaces, implementations, and extensions written in C#. 
+Giving developers powerful building blocks to orchestrate machine learning pipelines.
 
+![Build Status](https://github.com/omarhimada/ReadyDOS.ML.Shared/actions/workflows/readydos-shared-nuget-deploy.yml/badge.svg)
 ![NuGet Version](https://img.shields.io/nuget/v/ReadyDOS.ML.Shared?style=flat)
 
-## Getting Started
-I personally use `IWorkflow` in my own projects and real production-style prototypes, and I plan to adapt it soon for high-quality segmentation visualizations.
+There is currently a working proof-of-concept here: [AdosiML.com](https://adosiml.com)
 
-------------------------
-## + OCR & PDF AI Workflow implementatnions 
-## 🚀 Features Overview
-- [x] Reads unstructured or scanned PDFs (contracts, filings, policies, claims, regulations)
-- [x] Extracts text via embedded content or OCR, normalizes it, featurizes it, clusters it
-- [x] Produces quantifiable training manifests and preview-scored results
-- [x] Supports automated retraining, quality comparison, and best-model promotion
-- [x] Search & Replace
-- [x] Could runs on scalable worker services (CPU or GPU), suitable for ML-Ops or regulated intelligence pipelines
-- [x] Cloud storage integration
+- `IWorkflow` for scheduling end-to-end ML workflows. Data ingestion, featurization, training, evaluation, and model persistence steps.
+- Track dataset lineage, regression & classificiation model metrics, data splits, and other metadata.
+- Extended `KMeans++` clustering output, where the segments are given priorities - attaching actionable business intelligence
+- Included normalization methods to ensure adaptability to any dataset, organization or business. 
+- The produced `Prioritized Normalized Segmentation` can be integrated into your own organizations/businesses for actionable intelligence, value automated processes or manual intervention.
+  - It also includes properties that make it easy to visualize with common UI libraries.
+  - *e.g.: deserialize to `JSON` with your API and it is adapatable for producing chart components with many front-end frameworks compatible with Angular, TypeScript React, Blazor, WebAssembly, anything*.
 
+## What is provided?
+* I'm happy to give developers building blocks to orchestrate their own machine learning pipelines,
+  * Sharing certain parts of my consulting company `ReadyDOS`.
 
-### 📝 Text Formatting
-- **AI-powered legal documentation processing** at scale
-- Automates extraction and normalization of dense legal text from PDFs, contracts, filings, and statutes
-- Enables semantic clustering of documents for compliance review, e-discovery, risk triage, and regulatory audit readiness
-- Converts unstructured legal language into high-quality ML feature vectors for downstream analytics or model retraining
-- Reduces manual review costs, accelerates case preparation, and improves accuracy by eliminating human transcription error
-- Supports conditional dependency pathways (embedded text vs OCR) to maximize recall even on scanned or poor-quality legal sources
-- Generates preview-scored cluster assignments for rapid expert validation (e.g., grouping similar clauses or precedent families)
-- Best for: Law firms, compliance teams, e-discovery vendors, policy analysts, and regulated enterprises
+## What could I do with it?
+  * Compose and orchestrate end-to-end ML `IWorkflow` with your integrations
+    * *Data preparation → Training → Evaluation → Model Selection → Persistence*
+    * `ReadyDOS.ML.Shared` is designed with scalable orchestration in mind, in a cloud-agnostic way
+    * For example:
+      * Use singleton worker processes to schedule a concrete `IWorkflow` in a container, persisting the models in `S3` or `Azure Blob Storage`
+      * Orchestrate with containerization and CI/CD to `ECS Fargate`, `Kubernetes`, `Elastic Beanstalk`, `Azure App Service`, whatever your client business wants
+      * Then, implement an application layer to load the trained model using `API Gateway + Lambda` or `Azure Functions`, or whatever, to make predictions or inferences remotely using `HTTP/gRPC` etc.
 
-------------------------------------------------------
-* 12/25 Update
-* End-to-end ML workflow orchestration (data readiness → training → evaluation → persistence)
-* Structured metadata for dataset lineage and splits (DataObjectInfo, DataSplitInfo)
-* Consistent UTC timestamps for distributed and serverless systems
-* Algorithm identity mapping for business-friendly reporting
-* Clean log transport that integrates with any ILogger via IProgress
+### :heavy_plus_sign: New `PrioritizedNormalizedSegmentation`
+- 💹 Features Overview
+  - Extends typical RFM clustering (recency, frequency, monetary) with
+  - Prioritization of segments
+  - Normalization to ensure accessibility across organizations and business's different datasets
+  - Output easily formatted for dashboard visualizations with whatever UI front-end your application is using
 
-## What the Shared Library Provides
-*  🧠 Compose end-to-end ML workflows
-*  *(Data preparation → Training → Evaluation → Model Selection → Persistence)*
-* 📦 Generic workflow signatures that can cluster or train any dataset
-* 🧬 Dataset lineage tracking via metadata records:
-* `DataObjectInfo` → dataset source + last modified time
-* `DataSplitInfo` → train/eval dataset handles + row counts + origin key
-* 🕒 Consistent UTC timestamps for distributed and serverless systems
-* 🧾 Public-safe log transport, designed to integrate with any ILogger using:
-* 📊 Business-aligned KPI language in workflow results for revenue impact
-* 🧩 Algorithm identity mapping without exposing internal ML pipelines
-* 🚀 Scalable orchestration, ready for APIs, background workers, or dashboards
+### :orange_book: Update; an example **Case Study** using OCR to train AI with PDF documents en-masse
+- 💹 Features Overview
+  - OCR & PDF Workflow implementatnion, an example implementation using `IWorkflow`.
+  - An example of implementing the `IWorkflow` for AI training involving OCR and PDF documents.**
+  - Reads unstructured or scanned PDFs (contracts, filings, policies, claims, regulations)
+    - Extracts text via embedded content or OCR, normalizes it, featurizes it, clusters it
+    - Automates extraction and normalization of dense legal text from PDFs, contracts, filings, and statutes
+    - Enables semantic clustering of documents for compliance review, e-discovery, risk triage, and regulatory audit readiness
+    - Converts unstructured legal language into high-quality ML feature vectors for downstream analytics or model retraining
+    - Reduces manual review costs, accelerates case preparation, and improves accuracy by eliminating human transcription error
+      - **Supports conditional dependency pathways** (embedded text vs OCR) to maximize recall even on scanned or poor-quality legal sources
+      - Law firms, compliance teams, e-discovery vendors, policy analysts, and regulated enterprises**
 
-| **Currently Supported Algorithms** | **Display Name**  | **Examples**   
-| ----------------------------- | ---------------------- | ---------------------------------------------------------- |
-| Matrix Factorization          | Product Recommendations, Basket Expansion       | Increase Average Order Value (AOV) and purchase frequency. Recommendations to increase basket size                    |
-| L-BFGS Optimization           | Retention              | High-performance linear churn or propensity classification. Automate discounts in batches for customers at risk of churning, asn an example.|
-| KMeans++ Clustering           | Customer Segmentation  | Beheavioural insights into your customers/users.                        |
-| LightGBM                      | Forecasting			 | Sales, inventory demand/trends, revenue forecasting.                  |
+# Update on ReadyDOS (private repository)
+| **Currently Implemented **                   |  :globe_with_meridians: Applicable Business Use Cases                                 |
+| ---------------------------------------------|---------------------------------------------------------------------------------------|
+| Matrix Factorization                         | Customer/user-specific recommendations                                                |
+| L-BFGS Optimization                          | Churn prediction, supporting the ability to do fraud detection, and sales forecasting | 
+| KMeans++ Clustering                          | Provide actionable insight with segmentation (VIP members, dormant value, etc.)       |
 
