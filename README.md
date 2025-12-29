@@ -31,8 +31,8 @@ There is currently a working proof-of-concept here: [AdosiML.com](https://adosim
 ### :heavy_plus_sign: New `PrioritizedNormalizedSegmentation`
 - 💹 Features Overview
   - Extends typical RFM clustering (recency, frequency, monetary) with
-  - Prioritization of segments
-  - Normalization to ensure accessibility across organizations and business's different datasets
+    - Prioritization of segments
+    - Normalization to ensure accessibility across organizations and business's different datasets
   - Output easily formatted for dashboard visualizations with whatever UI front-end your application is using
 
 ### :orange_book: Update; an example **Case Study** using OCR to train AI with PDF documents en-masse
