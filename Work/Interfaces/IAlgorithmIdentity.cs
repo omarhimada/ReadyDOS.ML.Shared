@@ -29,6 +29,7 @@
             ChurnPrediction,
             Forecasting,
             Segmentation,
+            Waiting
         }
 
         /// <summary>

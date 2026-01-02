@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Shared.Work {
+﻿namespace Shared.Work {
+    /// <summary>
+    /// Specifies the types of events that can occur during the execution of a workflow.
+    /// </summary>
+    /// <remarks>Use this enumeration to identify and handle specific workflow events, such as when a workflow
+    /// starts, completes, fails, or processes datasets. The values can be used for logging, event handling, or
+    /// monitoring workflow progress.</remarks>
     public enum WorkflowEventType {
         Starting = 1,
         Configuring = 2,

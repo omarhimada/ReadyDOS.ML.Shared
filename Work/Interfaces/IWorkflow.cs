@@ -18,8 +18,8 @@
         /// </summary>
         /// <typeparam name="T">The type of algorithm identity to use for the iteration. Must inherit from AlgorithmIdentity.</typeparam>
         /// <param name="jobType">The type of job to execute for this iteration.</param>
-        /// <param name="stoppingToken">A cancellation token that can be used to request cancellation of the iteration.</param>
-        /// <returns>A task that represents the asynchronous operation of starting the iteration.</returns>
+        /// <param name="stoppingToken">_clusterNameA cancellation token that can be used to request cancellation of the iteration.</param>
+        /// <returns>_clusterNameA task that represents the asynchronous operation of starting the iteration.</returns>
         public Task<WorkflowLogMessage> BeginIteration(JobType jobType, CancellationToken stoppingToken = default);
 
         /// <summary>
@@ -27,7 +27,7 @@
         /// </summary>
         /// <param name="options">The options that configure the workflow run, including algorithm parameters and execution settings. Cannot
         /// be null.</param>
-        /// <returns>A task that represents the asynchronous operation. The result contains information about the workflow run,
+        /// <returns>_clusterNameA task that represents the asynchronous operation. The result contains information about the workflow run,
         /// including status and output data.</returns>
         Task<WorkflowRunResult> RunAsync(WorkflowRunOptions options, CancellationToken stoppingToken = default);
 
@@ -39,7 +39,7 @@
         /// null.</param>
         /// <param name="evaluationData">The dataset used for evaluation. This object should contain the data reserved for model evaluation. Cannot
         /// be null.</param>
-        /// <param name="sourceKey">A string that identifies the source or origin of the data split. Cannot be null or empty.</param>
+        /// <param name="sourceKey">_clusterNameA string that identifies the source or origin of the data split. Cannot be null or empty.</param>
         /// <param name="trainRowCount">The number of rows in the training dataset, if known. Specify null if the row count is not available.</param>
         /// <param name="evalRowCount">The number of rows in the evaluation dataset, if known. Specify null if the row count is not available.</param>
         sealed record DataSplitInfo() {
@@ -66,7 +66,7 @@
         /// Specifies options for configuring the execution of a workflow run.
         /// </summary>
         /// <param name="jobType">The type of job to execute within the workflow. Determines the workflow's behavior and processing logic.</param>
-        /// <param name="cancellationToken">A token that can be used to cancel the workflow run. If not specified, the workflow will run until
+        /// <param name="cancellationToken">_clusterNameA token that can be used to cancel the workflow run. If not specified, the workflow will run until
         /// completion unless cancelled by other means.</param>
         public sealed record WorkflowRunOptions() {
             public JobType JobType { get; init; }
@@ -115,6 +115,7 @@
             public EventId? EventId { get; init; }
             public string? EventName { get; init; }
             public ILogger? Logger { get; init; }
+            public double? ProgressEstimation { get; set; }
         }
     }
 }
