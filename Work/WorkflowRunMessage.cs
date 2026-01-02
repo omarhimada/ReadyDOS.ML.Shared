@@ -1,4 +1,4 @@
-﻿namespace Shared.Work {
+﻿namespace ReadyDOS.Shared.Work {
     /// <summary>
     /// Represents a message containing information about the progress and identification of a workflow run.
     /// </summary>

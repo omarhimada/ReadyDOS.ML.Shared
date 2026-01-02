@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Reflection;
 
-namespace Shared.Utility {
+namespace ReadyDOS.Shared.Utility {
     public static class FunctinoalPropertyExtensions {
         /// <summary>
         /// Sets a public instance property by name if it exists and is writable.

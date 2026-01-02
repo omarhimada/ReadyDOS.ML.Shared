@@ -1,4 +1,4 @@
-﻿namespace Shared.Work {
+﻿namespace ReadyDOS.Shared.Work {
     /// <summary>
     /// Specifies the types of events that can occur during the execution of a workflow.
     /// </summary>

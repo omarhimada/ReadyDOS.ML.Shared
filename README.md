@@ -35,18 +35,6 @@ There is currently a working proof-of-concept here: [AdosiML.com](https://adosim
     - Normalization to ensure accessibility across organizations and business's different datasets
   - Output easily formatted for dashboard visualizations with whatever UI front-end your application is using
 
-### :orange_book: Update; an example **Case Study** using OCR to train AI with PDF documents en-masse
-- 💹 Features Overview
-  - OCR & PDF Workflow implementatnion, an example implementation using `IWorkflow`.
-  - An example of implementing the `IWorkflow` for AI training involving OCR and PDF documents.**
-  - Reads unstructured or scanned PDFs (contracts, filings, policies, claims, regulations)
-    - Extracts text via embedded content or OCR, normalizes it, featurizes it, clusters it
-    - Automates extraction and normalization of dense legal text from PDFs, contracts, filings, and statutes
-    - Enables semantic clustering of documents for compliance review, e-discovery, risk triage, and regulatory audit readiness
-    - Converts unstructured legal language into high-quality ML feature vectors for downstream analytics or model retraining
-    - Reduces manual review costs, accelerates case preparation, and improves accuracy by eliminating human transcription error
-      - **Supports conditional dependency pathways** (embedded text vs OCR) to maximize recall even on scanned or poor-quality legal sources
-      - Law firms, compliance teams, e-discovery vendors, policy analysts, and regulated enterprises**
 
 # Update on ReadyDOS (private repository)
 | **Currently Implemented **                   |  :globe_with_meridians: Applicable Business Use Cases                                 |

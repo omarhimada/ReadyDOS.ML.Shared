@@ -1,4 +1,4 @@
-﻿namespace Shared.Work.Interfaces {
+﻿namespace ReadyDOS.Shared.Work.Interfaces {
     using Microsoft.Extensions.Logging;
     using static Shared.Work.Interfaces.IAlgorithmIdentity;
 

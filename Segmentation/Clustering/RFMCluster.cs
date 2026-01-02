@@ -1,4 +1,4 @@
-﻿namespace Shared.Segmentation.Models {
+﻿namespace ReadyDOS.Shared.Segmentation.Clustering {
     /// <summary>
     /// Represents the average recency, frequency, and monetary values for a customer cluster.
     /// Used during KMeans++ segmentation analysis.

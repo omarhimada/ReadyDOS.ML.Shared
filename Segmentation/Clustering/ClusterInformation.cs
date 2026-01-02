@@ -1,6 +1,4 @@
-﻿using Shared.Segmentation.Clustering;
-
-namespace Shared.Segmentation.Models {
+﻿namespace ReadyDOS.Shared.Segmentation.Clustering {
     /// <summary>
     /// This is typical output from KMeans++ segmentation. 
     /// Represents summary information about clusters, including their sizes, average values, and compactness metrics.

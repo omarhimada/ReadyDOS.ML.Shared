@@ -1,4 +1,4 @@
-﻿namespace Shared.Segmentation.Clustering {
+﻿namespace ReadyDOS.Shared.Segmentation.Clustering {
 
     /// <summary>
     /// Represents the compactness metrics for a cluster, including its name and the average distance of its members to

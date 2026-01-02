@@ -22,6 +22,23 @@
 		<IncludeSymbols>False</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="OCRPDF.ML\**" />
+	  <Compile Remove="S3mphony.ModelSelector\**" />
+	  <Compile Remove="S3mphony\**" />
+	  <Compile Remove="SavedModels\**" />
+	  <Compile Remove="Tests\**" />
+	  <EmbeddedResource Remove="OCRPDF.ML\**" />
+	  <EmbeddedResource Remove="S3mphony.ModelSelector\**" />
+	  <EmbeddedResource Remove="S3mphony\**" />
+	  <EmbeddedResource Remove="SavedModels\**" />
+	  <EmbeddedResource Remove="Tests\**" />
+	  <None Remove="OCRPDF.ML\**" />
+	  <None Remove="S3mphony.ModelSelector\**" />
+	  <None Remove="S3mphony\**" />
+	  <None Remove="SavedModels\**" />
+	  <None Remove="Tests\**" />
+	</ItemGroup>
 	  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.1" />
     <PackageReference Include="Microsoft.ML" Version="5.0.0" />

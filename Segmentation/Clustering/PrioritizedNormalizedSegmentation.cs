@@ -1,6 +1,4 @@
-﻿using Shared.Segmentation.Models;
-
-namespace Shared.Segmentation.Clustering.Extended {
+﻿namespace ReadyDOS.Shared.Segmentation.Clustering {
     /// <summary>
     /// Represents a segmentation of clusters with normalized and prioritized segments, enabling consistent customer
     /// segment analysis across different datasets.
@@ -33,7 +31,7 @@ namespace Shared.Segmentation.Clustering.Extended {
         /// Provides display names for customer segments. 
         /// Override this virtual property to customize segment labels for your organization.
         /// </summary>
-         public virtual Dictionary<SegmentRepresentation, string> SegmentDisplayNameMap => new() {
+        public virtual Dictionary<SegmentRepresentation, string> SegmentDisplayNameMap => new() {
             { SegmentRepresentation.VIPElite, "Top Clients" },
             { SegmentRepresentation.PremiumEngaged, "Premium Engaged" },
             { SegmentRepresentation.SleepingSpenders, "Dormant Value" },
@@ -55,17 +53,19 @@ namespace Shared.Segmentation.Clustering.Extended {
         /// <param name="clustering">Output from the Segmentation Workflow.</param>
         public PrioritizedNormalizedSegmentation(ClusterInformation clustering) {
             clustering.Deconstruct(
-                out var clusterSizes,
-                out var clusterAverages,
-                out var clusterCompactness);
+                out IReadOnlyList<Cluster>? clusterSizes,
+                out IReadOnlyList<RFMCluster>? clusterAverages,
+                out IReadOnlyList<CompactRFMCluster>? clusterCompactness);
 
-            #region Normalize the quantities for different datasets (e.g.: the dollar store vs. a luxury retailer)
+            #region Normalize the quantities for different datasets 
             double minRecency = clusterAverages.Min(a => a.AvgRecencyDays);
             double maxRecency = clusterAverages.Max(a => a.AvgRecencyDays);
 
+            // (e.g.: yearly subscriptions or frequent microtransacations?)
             double minFrequency = clusterAverages.Min(a => a.AvgFrequency);
             double maxFrequency = clusterAverages.Max(a => a.AvgFrequency);
 
+            // (e.g.: the dollar store pricing vs. a luxury retailer)
             double minMonetary = clusterAverages.Min(a => a.AvgMonetary);
             double maxMonetary = clusterAverages.Max(a => a.AvgMonetary);
             #endregion
@@ -74,15 +74,18 @@ namespace Shared.Segmentation.Clustering.Extended {
                 max - min <= 0 ? 0.5 : (v - min) / (max - min);
 
             PrioritizedSegments =
-                clusterCompactness
+                [.. clusterCompactness
                 .Join(clusterAverages, c => c.ClusterName, a => a.ClusterName, (c, a) => new { c, a })
-
+                .Join(clusterSizes, ca => ca.c.ClusterName, s => s.ClusterName, (ca, s) => new { ca.c, ca.a, s })
                 .OrderBy(x => x.c.AvgDistanceToAssignedCentroid)
                 .Select((x, i) => {
                     double recencyNorm = MinMax(x.a.AvgRecencyDays, minRecency, maxRecency);
                     double recencyScore = 1.0 - recencyNorm;
                     double frequencyNorm = MinMax(x.a.AvgFrequency, minFrequency, maxFrequency);
                     double monetaryNorm = MinMax(x.a.AvgMonetary, minMonetary, maxMonetary);
+
+                    // Cluster size
+                    int size = x.s.Count;
 
                     // Due to normalization the assigned meaningful names are consistent across datasets
                     string displayName =
@@ -99,6 +102,7 @@ namespace Shared.Segmentation.Clustering.Extended {
 
                     return new PrioritizedSegment {
                         DisplayName = displayName,
+                        Size = size,
                         Recency = recencyScore,
                         Frequency = frequencyNorm,
                         Monetary = monetaryNorm,
@@ -112,8 +116,7 @@ namespace Shared.Segmentation.Clustering.Extended {
 
                         }
                     };
-                })
-                .ToList();
+                })];
 
         }
     }

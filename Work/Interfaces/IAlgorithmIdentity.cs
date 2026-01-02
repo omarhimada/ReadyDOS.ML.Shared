@@ -1,4 +1,4 @@
-﻿namespace Shared.Work.Interfaces {
+﻿namespace ReadyDOS.Shared.Work.Interfaces {
     /// <summary>
     /// Provides a set of algorithm identifiers and their associated display names supported by the system.
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML;
 
-namespace Shared.Work.Interfaces {
+namespace ReadyDOS.Shared.Work.Interfaces {
     public interface ISegmentation {
         /// <summary>
         /// Only exposes aggregated counts and distances, which are safe and useful for UI charts.

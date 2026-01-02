@@ -1,4 +1,4 @@
-﻿namespace Shared.Segmentation.Clustering {
+﻿namespace ReadyDOS.Shared.Segmentation.Clustering {
 
     /// <summary>
     /// Represents input data for customer segmentation analysis, including recency, frequency, and monetary value
