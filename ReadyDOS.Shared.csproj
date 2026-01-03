@@ -40,13 +40,13 @@
 	  <None Remove="Tests\**" />
 	</ItemGroup>
 	  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.1" />
-    <PackageReference Include="Microsoft.ML" Version="5.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.1" />
+	<PackageReference Include="Microsoft.ML" Version="5.0.0" />
   </ItemGroup>
 	<ItemGroup>
 	  <None Update="README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
+		<Pack>True</Pack>
+		<PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
 </Project>
