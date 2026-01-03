@@ -19,7 +19,7 @@ jobs:
           dotnet-version: "10.0.x"
 
       - name: Restore
-        run: dotnet restore ./ReadyDOS.Public.slnx
+        run: dotnet restore ./ReadyDOS.Shared.slnx
 
       - name: Build (Release)
         run: dotnet build ./ReadyDOS.Shared.csproj --configuration Release --no-restore

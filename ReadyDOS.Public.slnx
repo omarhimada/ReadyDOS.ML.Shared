@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="ReadyDOS.Shared.csproj" />
-  <Project Path="S3mphony.ModelSelector/S3mphony.ModelSelector.csproj" />
-  <Project Path="S3mphony/S3mphony.csproj" />
-</Solution>
