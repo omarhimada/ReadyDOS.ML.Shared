@@ -22,14 +22,14 @@ jobs:
         run: dotnet restore ./ReadyDOS.Public.slnx
 
       - name: Build (Release)
-        run: dotnet build ./ReadyDOS.Public.csproj --configuration Release --no-restore
+        run: dotnet build ./ReadyDOS.Shared.csproj --configuration Release --no-restore
 
       - name: Pack to artifacts folder
         shell: pwsh
         run: |
           $version = [System.DateTime]::UtcNow.ToString("yyyy.MM.dd.HHmm")
           New-Item -ItemType Directory -Force -Path "./artifacts/nuget" | Out-Null
-          dotnet pack ./ReadyDOS.Public.csproj `
+          dotnet pack ./ReadyDOS.Shared.csproj `
             --configuration Release `
             --no-build `
             -p:PackageVersion=$version `
