@@ -19,10 +19,10 @@ jobs:
           dotnet-version: "10.0.x"
 
       - name: Restore
-        run: dotnet restore ./S3mphony.ModelSelector.slnx
+        run: dotnet restore ./ReadyDOS.Public.slnx
 
       - name: Build (Release)
-        run: dotnet build ./S3mphony.ModelSelector.csproj --configuration Release --no-restore
+        run: dotnet build ./S3mphony.ModelSelector/S3mphony.ModelSelector.csproj --configuration Release --no-restore
 
       - name: Pack to artifacts folder
         shell: pwsh
