@@ -1,5 +1,4 @@
-﻿using Microsoft.ML;
-using ReadyDOS.Shared.Segmentation.Clustering;
+﻿using ReadyDOS.Shared.Segmentation.Clustering;
 
 namespace ReadyDOS.Shared.Segmentation {
     /// <summary>

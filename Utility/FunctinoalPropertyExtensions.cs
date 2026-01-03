@@ -63,8 +63,7 @@ namespace ReadyDOS.Shared.Utility {
                 object converted = Convert.ChangeType(value, dest, CultureInfo.InvariantCulture);
                 result = (T)converted;
                 return true;
-            }
-            catch {
+            } catch {
                 return false;
             }
         }

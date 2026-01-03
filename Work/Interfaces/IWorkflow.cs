@@ -73,14 +73,14 @@
             public CancellationToken CancellationToken { get; init; }
         }
 
-        
+
         /// <summary>
         /// Represents the result of a workflow run, including execution details, status, and summary information.
         /// </summary>
         /// <remarks>This record provides a snapshot of a completed workflow execution, including timing,
         /// outcome, and optional diagnostic information. It is typically used to report or analyze the outcome of a
         /// workflow job after execution has finished.</remarks>
-        public sealed record WorkflowRunResult { 
+        public sealed record WorkflowRunResult {
             public JobType JobType { get; init; }
             public required string AlgorithmDisplayName { get; init; }
             public string? SourceKey { get; init; }

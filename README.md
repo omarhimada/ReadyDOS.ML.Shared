@@ -36,8 +36,8 @@ There is currently a working proof-of-concept here: [AdosiML.com](https://adosim
   - Output easily formatted for dashboard visualizations with whatever UI front-end your application is using
 
 
-# Update on ReadyDOS (private repository)
-| **Currently Implemented **                   |  :globe_with_meridians: Applicable Business Use Cases                                 |
+## Update on ReadyDOS
+| **Currently Implemented **                   |  :globe_with_meridians: Example Use Cases                                             |
 | ---------------------------------------------|---------------------------------------------------------------------------------------|
 | Matrix Factorization                         | Customer/user-specific recommendations                                                |
 | L-BFGS Optimization                          | Churn prediction, supporting the ability to do fraud detection, and sales forecasting | 
