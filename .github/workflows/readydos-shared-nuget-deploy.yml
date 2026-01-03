@@ -19,17 +19,17 @@ jobs:
           dotnet-version: "10.0.x"
 
       - name: Restore
-        run: dotnet restore ./ReadyDOS.Shared.slnx
+        run: dotnet restore ./ReadyDOS.ML.Shared.slnx
 
       - name: Build (Release)
-        run: dotnet build ./ReadyDOS.Shared.csproj --configuration Release --no-restore
+        run: dotnet build ./ReadyDOS.ML.Shared.csproj --configuration Release --no-restore
 
       - name: Pack to artifacts folder
         shell: pwsh
         run: |
           $version = [System.DateTime]::UtcNow.ToString("yyyy.MM.dd.HHmm")
           New-Item -ItemType Directory -Force -Path "./artifacts/nuget" | Out-Null
-          dotnet pack ./ReadyDOS.Shared.csproj `
+          dotnet pack ./ReadyDOS.ML.Shared.csproj `
             --configuration Release `
             --no-build `
             -p:PackageVersion=$version `
