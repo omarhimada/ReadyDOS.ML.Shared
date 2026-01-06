@@ -43,3 +43,7 @@ There is currently a working proof-of-concept here: [AdosiML.com](https://adosim
 | L-BFGS Optimization                          | Churn prediction, supporting the ability to do fraud detection, and sales forecasting | 
 | KMeans++ Clustering                          | Provide actionable insight with segmentation (VIP members, dormant value, etc.)       |
 
+<img width="3330" height="1816" alt="readydos3x1" src="https://github.com/user-attachments/assets/4b8998fe-8112-487f-9d89-eb9b995aaa55" />
+https://adosiml.com
+
+
