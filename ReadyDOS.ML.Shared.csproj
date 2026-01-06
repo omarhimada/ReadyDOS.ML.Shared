@@ -13,7 +13,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>ml,ai,ml ops,dag,directed acyclic graph,workflows,pipeline,data,machine learning</PackageTags>
 		<Company>$(Authors),omarhimada,readydos</Company>
-		<PackageId>ReadyDOS.ML.$(AssemblyName)</PackageId>
+		<PackageId>$(AssemblyName)</PackageId>
 		<Authors>$(AssemblyName),omarhimada,readydos</Authors>
 		<Product>ReadyDOS.ML.$(AssemblyName)</Product>
 		<PackageProjectUrl>https://adosiml.com/</PackageProjectUrl>
