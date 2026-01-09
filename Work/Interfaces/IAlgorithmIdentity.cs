@@ -6,7 +6,6 @@
     /// Use the SupportedAlgorithms dictionary to retrieve the human-readable name for a given algorithm
     /// identifier.</remarks>
     public interface IAlgorithmIdentity {
-
         /// <summary>
         /// Specifies the set of supported machine learning algorithms.
         /// </summary>
