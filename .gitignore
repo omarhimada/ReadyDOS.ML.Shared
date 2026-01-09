@@ -194,3 +194,4 @@ $tf/
 !.axoCover/settings.json
 !**/[Pp]ackages/build/
 /SavedModels/*
+/Tests

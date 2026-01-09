@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace ReadyDOS.ML.Shared.Utility.FradulentImageDetection {
-
+namespace ReadyDOS.ML.Shared.FradulentImageDetection {
     /// <summary>
     /// Provides static methods for encoding and decoding run-length encoded (RLE) masks, calculating F1 scores between
     /// binary masks, and evaluating segmentation predictions using optimal assignment metrics compatible with
@@ -17,7 +16,6 @@ namespace ReadyDOS.ML.Shared.Utility.FradulentImageDetection {
             public ParticipantVisibleError(string message) : base(message) { }
             public ParticipantVisibleError(string message, Exception inner) : base(message, inner) { }
         }
-
 
         /// <summary>
         /// Encodes a collection of binary masks using run-length encoding (RLE) and returns the result as a
@@ -547,5 +545,4 @@ namespace ReadyDOS.ML.Shared.Utility.FradulentImageDetection {
             return t;
         }
     }
-
 }
