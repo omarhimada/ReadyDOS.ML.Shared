@@ -20,7 +20,7 @@
         /// <param name="jobType">The type of job to execute for this iteration.</param>
         /// <param name="stoppingToken">_clusterNameA cancellation token that can be used to request cancellation of the iteration.</param>
         /// <returns>_clusterNameA task that represents the asynchronous operation of starting the iteration.</returns>
-        public Task<WorkflowLogMessage> BeginIteration(JobType jobType, CancellationToken stoppingToken = default);
+        public Task<WorkflowLogMessage> BeginIteration(WorkType jobType, CancellationToken stoppingToken = default);
 
         /// <summary>
         /// Executes the workflow asynchronously using the specified algorithm and run options.
@@ -69,7 +69,7 @@
         /// <param name="cancellationToken">_clusterNameA token that can be used to cancel the workflow run. If not specified, the workflow will run until
         /// completion unless cancelled by other means.</param>
         public sealed record WorkflowRunOptions() {
-            public JobType JobType { get; init; }
+            public WorkType JobType { get; init; }
             public CancellationToken CancellationToken { get; init; }
         }
 
@@ -81,7 +81,7 @@
         /// outcome, and optional diagnostic information. It is typically used to report or analyze the outcome of a
         /// workflow job after execution has finished.</remarks>
         public sealed record WorkflowRunResult {
-            public JobType JobType { get; init; }
+            public WorkType JobType { get; init; }
             public required string AlgorithmDisplayName { get; init; }
             public string? SourceKey { get; init; }
             public DateTime StartedAtUtc { get; init; }

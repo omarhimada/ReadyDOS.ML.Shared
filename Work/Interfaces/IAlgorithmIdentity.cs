@@ -6,6 +6,15 @@
     /// Use the SupportedAlgorithms dictionary to retrieve the human-readable name for a given algorithm
     /// identifier.</remarks>
     public interface IAlgorithmIdentity {
+        public const string MatrixFactorizationDisplayName = @"Matrix Factorization";
+        public const string LBFGSOptimizationDisplayName = @"L-BFGS Optimization";
+        public const string KMeansClusteringDisplayName = @"K-Means++";
+        public const string LightGbmDisplayName = @"LightGBM";
+        public const string FastTreeRegressionDisplayName = @"Fast Tree Regression";
+        public const string FastForestRegressionDisplayName = @"Fast Forest Regression";
+        public const string SdcaRegressionDisplayName = @"SDCA Regression";
+        public const string LbfgsRegressionDisplayName = @"Limited-memory BFGS";
+
         /// <summary>
         /// Specifies the set of supported machine learning algorithms.
         /// </summary>
@@ -15,34 +24,25 @@
         /// every context; refer to the specific API documentation for details on supported operations.</remarks>
         public enum Algorithm {
             MatrixFactorization,
-            LightGbmForecasting,
             LBFGSOptimization,
             KMeansClustering,
+            LightGbm,
+            FastTreeRegression,
+            FastForestRegression,
+            SdcaRegression,
+            LbfgsRegression
         }
 
         /// <summary>
         /// Specifies the types of jobs that can be executed in the system.
         /// </summary>
-        public enum JobType {
+        public enum WorkType {
             Recommendations,
-            ChurnPrediction,
+            CustomerIntelligence, // Churn prediction + segmentation have been merged into this job type
             Forecasting,
-            Segmentation,
-            Waiting
+            Waiting,
+            AutoExperiment
         }
-
-        /// <summary>
-        /// Provides a read-only mapping from job types to their corresponding machine learning algorithms.
-        /// </summary>
-        /// <remarks>This dictionary enables consumers to determine which algorithm is associated with a
-        /// given job type. The mapping is static and does not change at runtime.</remarks>
-        public static readonly IReadOnlyDictionary<JobType, Algorithm> JobTypeToAlgorithm = new Dictionary<JobType, Algorithm>
-        {
-            { JobType.Recommendations, Algorithm.MatrixFactorization },
-            { JobType.ChurnPrediction, Algorithm.LBFGSOptimization },
-            { JobType.Segmentation, Algorithm.KMeansClustering },
-            { JobType.Forecasting, Algorithm.LightGbmForecasting }
-        };
 
         /// <summary>
         /// Provides a mapping of supported algorithms to their display names.
@@ -51,43 +51,28 @@
         /// corresponding human-readable names. The set of supported algorithms is fixed at initialization and does not
         /// change at runtime.</remarks>
         public static readonly Dictionary<Algorithm, string> SupportedAlgorithms = new() {
-            { Algorithm.MatrixFactorization, @"Matrix Factorization" },
-            { Algorithm.LBFGSOptimization, @"L-BFGS Optimization" },
-            { Algorithm.KMeansClustering, @"K-Means++" },
-            { Algorithm.LightGbmForecasting, @"LightGBM" }
+            { Algorithm.MatrixFactorization, MatrixFactorizationDisplayName },
+            { Algorithm.LBFGSOptimization, LBFGSOptimizationDisplayName },
+            { Algorithm.KMeansClustering, KMeansClusteringDisplayName },
+            { Algorithm.LightGbm, LightGbmDisplayName }
         };
 
         /// <summary>
-        /// Provides descriptive text for each supported job type, including business value and use case information.
+        /// Provides a mapping of algorithm display names to their corresponding <see cref="Algorithm"/> enumeration
+        /// values.
         /// </summary>
-        /// <remarks>Each entry maps a <see cref="JobType"/> value to a string that describes the purpose
-        /// and business impact of the corresponding job. These descriptions can be used in user interfaces,
-        /// documentation, or logging to help users understand the intent and benefits of each job type.</remarks>
-        public static readonly Dictionary<JobType, string> JobTypeDescriptions = new()
-        {
-            { JobType.Recommendations, """
-                Trains a recommendation model that suggests the most relevant products for each customer.
-                Business value: increases Average Order Value (AOV), basket expansion, and purchase frequency,
-                driving higher total revenue per user and improving repeat sales.
-                """ },
-
-            { JobType.ChurnPrediction, """
-                Trains a binary classifier to detect customers likely to churn.
-                Business value: reduces customer loss, protects recurring revenue, and maximizes
-                Customer Lifetime Value (CLV) by optimizing retention and automating intervention.
-                """ },
-
-            { JobType.Segmentation, """
-                Performs behavioral clustering to generate customer segments using K-Means++.
-                Business value: enables targeted pricing, promotions, and smarter budget allocation,
-                improving campaign conversion, discount efficiency, and incremental revenue lift.
-                """ },
-
-            { JobType.Forecasting, """
-                Trains a high-accuracy forecasting model on tabular or time-series business data.
-                Business value: informs price optimization, promotion timing, and inventory planning,
-                maximizing revenue outcomes by modeling price × demand and preventing stockout losses.
-                """ }
+        /// <remarks>This dictionary can be used to look up supported algorithms by their human-readable
+        /// names. The set of supported algorithms is fixed and reflects the algorithms available in the current
+        /// version.</remarks>
+        public static readonly Dictionary<string, Algorithm> AlgorithmSupported = new() {
+            { MatrixFactorizationDisplayName, Algorithm.MatrixFactorization },
+            { LBFGSOptimizationDisplayName, Algorithm.LBFGSOptimization },
+            { KMeansClusteringDisplayName, Algorithm.KMeansClustering },
+            { LightGbmDisplayName, Algorithm.LightGbm },
+            { FastTreeRegressionDisplayName, Algorithm.FastTreeRegression },
+            { FastForestRegressionDisplayName, Algorithm.FastForestRegression },
+            { SdcaRegressionDisplayName, Algorithm.SdcaRegression },
+            { LbfgsRegressionDisplayName, Algorithm.LbfgsRegression }
         };
     }
 }
